@@ -1,0 +1,2172 @@
+[MUSIC PLAYING]
+
+DAVID MALAN: Welcome everyone to web programming with Python and JavaScript.
+My name is David Malan.
+BRIAN YU: I'm Brian.
+DAVID MALAN: And today we're going to give you a quick overview of the course
+and then dive right into the course's material.
+So this is meant to be a class taken after a course like CS50, which
+is the colleges and the extension schools
+introduction to computer science.
+But even if you haven't taken that class anything approximating
+that is certainly fine.
+We assume only prior programming experience in some language.
+And what we'll then do is assuming you know
+some of the basic constructs of most any procedural or imperative language,
+we'll fill in the blanks along the way both with Python and with JavaScript.
+Neither is actually assumed.
+And what we'll do over the course of the next several weeks
+is first dive into Git.
+So you might know Git if you've used it before as a version control
+software, whereby you can maintain multiple versions of your software.
+But these days it's actually used for much more than that.
+People will use it not only for versioning their code
+and for collaborating with others, but also
+for deploying their code from their local machines
+to some staging server to some testing server and ultimately to production.
+So it's actually become quite an integral tool
+when it comes to actually deploying your code to the cloud,
+so to speak these days.
+Thereafter, we'll transition to HTML and CSS, with which you might already
+be familiar, but we're focused on some of the more modern perhaps
+some of the more advanced features of both of these languages
+HTML5, specifically the latest incarnation of that,
+as well as CSS and various selectors that you may or may not
+have used before.
+But also toolchain, something called SAS that allows you to programmatically
+generate and maintain more readily, more complicated style sheets
+especially as your web apps become themselves more complicated.
+We'll then introduce Flask, which is going
+to be a very popular framework for making web
+based applications using Python.
+And it's generally considered a micro framework,
+which means there's not all that much complexity to it.
+It doesn't try to do too much.
+It really just tries to solve some very common problems so that most
+of your effort when writing a web app with it
+isn't focused on how do I learn Flask and how do I
+build with this architecture, but rather how
+do you implement your ideas without reinventing the wheel?
+And so you'll get that out of a micro framework like this.
+We'll then introduce a bit of SQL, or structured query language
+with which you can query databases and store your actual data.
+And we'll look at perhaps more complex queries
+than you've seen or used in the past.
+We'll talk about the idea of API, or application programming interfaces.
+These can be both your own that you build for your own applications to use,
+or as you may have used them already third party APIs.
+Data feeds and functional behavior that you can actually access over the web
+or from some other server that some other company or person has actually
+made available to you to make your applications all the more
+interactive or featureful.
+And then we'll introduce JavaScript, which you might have used or tinkered
+with before.
+We'll introduce the very latest something known as ES6
+or ECMAScript 6, which adds a number of features many of which,
+or most of which are supported by today's browsers.
+But we'll also talk about some of the pitfalls
+when you try to use some of the latest and greatest features
+and what it might mean to ensure as through transpiling or other techniques
+that your code will indeed work on any number of mobile devices and desktops
+and laptops these days.
+And we'll also talk about front ends, the idea of actually building
+a front end user interface using JavaScript talking about techniques
+like Ajax or SPAs single page applications these days,
+particularly modern paradigms with which folks are implementing today's web
+applications.
+Also looking at things like graphics and animation as it
+can be implemented in JavaScript and inside of a browser.
+And then we'll look at a heavier weight framework
+something known as Django, which is similar in spirit at least at first
+to something like Flask.
+Just makes it easier to get going building web applications,
+but comes with so many more features.
+The proverbial kitchen sink.
+So when you get a little tired in life of implementing
+an administrative interface to your web application, or a log in interface
+for your application, or any number of things that a lot of us
+probably use in various tools.
+You can start to lean on these larger scale frameworks that
+just come with many more features.
+And as such, you might have to comfort of it more to its conventions,
+but you'll end up writing a lot less code than you would otherwise.
+So we'll sort of graduate to that level of framework.
+And then we'll talk about a world that's generally
+known these days as DevOps, development and operations kind of united in one,
+in the context of testing like making sure your code actually works
+and how you can think about that and how you can actually do that when
+writing your code.
+And then CICD continuous integration and continuous development,
+which is just a fancy way of saying setting yourself up
+for success with the right tools and with the right scripts,
+the right environments so that when you run a command on your laptop or desktop
+the code actually goes somewhere and it goes not only into a code
+repository to be saved and versioned and shared with other people,
+but you can test it automatically and continuously so to speak.
+And you can even deploy it to the cloud simply by having set up
+some of those steps in advance.
+So if you're already in the habit now of deploying your applications by kind
+of dragging and dropping them to an FTP server or using some web interface
+or copying things, all of this now can be automated in very robust ways
+especially that are conducive to collaboration with others.
+And then toward the end of the term we'll
+talk about some higher level issues that will
+inform how you go about building web applications
+after the scope of the class.
+Scalability.
+So topics like DNS and load balancing and how
+you think about anticipating that 101st user that
+might not fit on just one server.
+And so if you now have to have your app on two
+or three or more different servers, how do you
+have these servers talking to one another
+and how do you share data among them?
+What's going to get easy?
+What's going to get hard as you scale to more and more users?
+And then throughout the semester, we'll talk about topics of security.
+What you want to do in terms of best practices
+to avoid getting exploited in some way, but we'll also
+culminate that discussion in a focus on security at the end
+so that when you go out into the real world
+or back into the real world after the courses lessons,
+you actually are mindful of especially in the languages and tools
+that we'll use throughout the semester of what
+you should be particularly mindful of.
+And then as punctuating the whole semester will be a number of projects.
+So four assigned projects where we prescribe the specifications of some
+app that we'd like you to build with the whole course's staff and support
+structure.
+And then one final project that will culminate this semester, whereby you'll
+be invited to design and implement your own tool that's
+a genuine personal or professional interest
+to you that somehow draws upon the course's lessons.
+And let me pause there and see before we forge ahead if there are any questions.
+
+Anything else?
+Yeah.
+AUDIENCE: So HTML, CSS, JavaScript-- suppose
+I don't have any experience on those things?
+DAVID MALAN: Good question.
+And so what then?
+So if you don't have any experience in some of the alphabet soup
+that we put up already like HTML and CSS,
+JavaScript and/or Python, for the most part that's OK.
+I would say that they'll be a bit of a more of a learning curve
+early on for you.
+But we will take care to provide students like you
+with any number of resources supplementary
+so you know where to fill in any gaps.
+And we'll also introduce these topics in the class itself.
+So all of the topics that we just gave an overview of we'll
+introduce and dive into in the class.
+It will certainly be advantageous if you've seen them before,
+but each of the projects and by way of the courses sections and lectures
+where you have all the material you need to succeed,
+even if most of these topics are brand new.
+So not to worry.
+Other questions?
+Yeah.
+AUDIENCE: [INAUDIBLE] purchase any of the software [INAUDIBLE]??
+DAVID MALAN: No need to purchase any software whatsoever.
+All of the tools that we'll use, all of the libraries,
+frameworks, APIs are freely available now and after the class as well.
+Other questions?
+No.
+All right.
+So first on the agenda today is version control
+and Gits in particular, a tool that you'll
+use not only to version your code and share your code,
+but also ultimately deploy it.
+So without further ado allow me to turn things over to Brian.
+BRIAN YU: Thank you very much.
+All right.
+So the first topic that we're going to be talking about today as we approach
+the world of web programming and web development
+is thinking about when we're designing projects,
+how do we keep track of different versions of our code?
+How do we collaborate with other people?
+How do we make sure that if we make a change and that change
+doesn't work that we have an easy way to go back to older versions of our code
+and make sure that we have access to those as well?
+And so all of that falls under the larger umbrella
+of what's called version control.
+And out there, there are some number of different version control software
+that people are using on a day to day basis, but one of the most popular
+is a piece of software called Git, which is a version control
+tool that we're going to be using in this class
+and that people often use in industry in order to help maintain and manage
+different versions of their code in order to keep track of their projects
+and make sure that everything is organized
+and that they're able to effectively collaborate
+with other people along the way.
+So we'll take a moment to step back and talk about the different things
+that Git does for you at a high level.
+And then we'll dive in and look at the actual commands
+that you would use in order to run Git, understand how it works
+and actually make use of it.
+So the first thing that Git's good at doing
+is keeping track of different changes to your code
+so that if you're making changes, you don't only
+have access to the latest version of your code,
+but if you start out with a particular file
+and then you make changes and add another line to it,
+you remove a line to it later you can keep
+track of all of those different versions of those files
+such that you know the history of your project
+and how it's developed from the beginning
+all the way up until where you are now.
+So that's one thing Git's particularly good at.
+One other thing the version control is very useful for
+is synchronizing code between different people.
+Very often in the modern world you're not
+the only person working alone on your projects independently, but rather you
+and one or more other people are working together
+collaboratively trying to work on a project together and making sure
+that you and the people you're working with stay in sync in terms of your code
+is often a challenging task.
+And what Git, another version control softwares
+like it do is help to make that process a little bit easier.
+So you can imagine that maybe we're storing a version of your code
+up in some remote server somewhere.
+And Git what will allow you to do is make sure
+that you and someone you're working with both have access to that same code.
+And when you both make independent different changes to that code
+there's an easy way via which Git can merge those changes back
+together so that there's a central version that
+has all of the changes to which both of you will then have access to.
+So synchronizing code between different people
+and making sure that everyone has access to that code base
+is something that is also useful with regards to version control.
+In addition, Git is also very good at letting you test your code
+without losing your original copy.
+So if you have a working program or a working web application
+and you want to make some modifications to it in order to add a new feature
+but you're worried that adding that new feature
+might break some prior feature that's already existing within your web
+application, Git's very good at letting you test your new changes
+and experiment with your code without losing track of that original.
+And only once you're happy with the original code
+that you have can you then merge your new changes in with the existing
+changes so that you never lose a working copy of your web application
+And finally, one last thing to Git is very
+good at is reverting back to old versions of your code.
+So you've been working on your project, you've
+made some number of modifications or edits,
+and you realize that your most recent version of your program doesn't work,
+you want to go back to some previous version of your code.
+Git is also very good at allowing you to revert back
+to old versions of your code.
+And we'll see examples of all of that in just a moment.
+So that's sort of the high level overview of what Git is
+and how it works.
+And in this course we'll also be using another service known as GitHub.
+And GitHub is just a website whose purpose in life
+is to store Git repositories on the internet.
+It's to give you and people all around the world access
+to Git repositories on the internet, such
+that you can look at repositories that other people have created
+and contribute to them or use them, and such
+that you can work on your own projects, push them to GitHub so
+that your collaborators or other people on the internet can also see and use
+and work on those projects as well.
+And so one of the first things you'll do in this course is go to GitHub.
+And if you don't already have an account already you'll
+create a free GitHub account.
+And once you do, I'll show you what GitHub's interface looks like.
+We'll just go to get github.com.
+And so this is what github.com might look like once you log in.
+And what we'll do right here is we're going
+to first create a GitHub repository.
+And repository is just a fancy word for the place
+where we are going to keep track of all of your code and all of the changes
+to your code.
+Think of it as like a central storage place where
+we're going to store your project.
+So in the upper right of GitHub's screen we have the plus button
+and we can go to the new repository.
+And this takes us to the page where we can create a brand new repository.
+In this case, I'm going to name the repository Lecture Zero.
+And I'll go ahead and just click Create Repository.
+And that creates a new repository for me that stored on GitHub.
+Right now it's not on my computer yet, but we'll see in a moment
+how we can take this repository which is right now empty but on the internet
+and download a copy of it to our own computer.
+And so that's where we start to introduce some of the command line
+interface of Git and the commands that you might run in order to use it.
+So after you've installed Git, one of the first commands you'll want to learn
+is git clone.
+And the git clone command has just one purpose.
+What it does is it takes a repository stored somewhere
+else like on some server like GitHub.
+And what happens is that when you run git clone followed
+by the URL of that GitHub repository, that remote version of your code
+will be downloaded onto your computer so that you
+have a copy of the repository on your own computer.
+So I'll show you what that looks like now.
+We'll head back over to the GitHub repository
+that we just created over here.
+And what you'll notice is that GitHub provides me with this URL.
+This is the URL of this GitHub repository.
+So if I go ahead and copy that to my clipboard
+and open up a terminal window, for example, what I can do
+is type git clone followed by that URL, just pasting it right in there.
+When I press Return it already exists because I already created it.
+So I'll go ahead and remove the old version of that.
+Sorry about that.
+And we'll do git clone pasting in that repository.
+And it's giving me a warning.
+Warning you appear to have cloned an empty repository, which
+is to be expected because the repository that I just created was in fact empty.
+And I can CD, CD for change directory, if you're
+unfamiliar with the command line interface
+into that Lecture Zero directory.
+And now I'm inside of that Lecture Zero directory.
+Which if I take LS for list or list all files
+in that directory nothing shows up.
+So this directory is currently empty.
+So let's go ahead and fix that.
+Let's add some code to this repository.
+I can use the touch command where touch is just
+a command that if you're unfamiliar with it can help to create a brand new file.
+And I'll create a new file called hello.html.
+And I'll open up that file using a text editor.
+In this class you can use whatever text editor you wish.
+But common ones include Adam which I'm using here,
+but also Sublime and VS Code and many others.
+And I'll just go ahead and create here a simple HTML web page.
+No worries if you haven't seen HTML before
+and this looks unfamiliar to you.
+Later on during tonight's lecture we'll dive
+in more depth into what all this code means if you haven't seen HTML
+before to understand what's actually happening when I create this web page.
+But in essence, what I'm going to do is create
+a website whose title is my web page and whose contents just say hello, world.
+All right.
+So there I have it, a simple HTML web page.
+Again, not to worry if you haven't seen this type of thing before.
+But now I want to take that code and save it.
+I want to make a what's called a commit to my repository
+to say these are changes that I want to save because one day I might want
+to refer back to them, for instance.
+And so the next thing we'll need to know is git add.
+And the git add command basically means we're
+going to take some number of files, one or more files that we've changed
+and tell Git that these are files that we want to include the next time we
+make a commit, to the next time that we save
+a version or a snapshot of the current repository.
+So for instance, if I say git add followed
+by some file name, what that's going to do is tell Git to track that file.
+That this file is a file that I want to track the next time
+that I save a copy of the repository.
+So what does that actually look like?
+If I do ls right now, again, list all the files in the current directory,
+you'll see that I have hello.html, that file that I just created.
+And what I'll do now is I'll say git add hello.html.
+To mean, I want to take hello.html, and I
+want to include that the next time I save a version of this repository.
+Nothing appears to have happened, but that's
+OK I have now added hello.html as a file that I want
+to track the next time I make a save.
+So what does that process look like?
+That comes in the form of a command called git commit.
+Commit it just fancy way of saying take a snapshot of the repository
+in the current moment and save it.
+And so how that would work is I would say git commit followed by a flag dash
+m, m for message, and then in quotation marks
+some English message describing what it is that I've changed in this commit,
+describing what it is that's happened in this change that
+makes it different from previous versions of the code.
+This is useful because as you begin working
+on a project that has dozens or hundreds or even thousands of commits,
+later on you can refer back to this list of messages
+that you yourself have written describing what happened
+in any successive change, so that you know where to look if you're trying
+to find a particular commit, or a particular change that you made
+to your code at any particular time.
+So when you run git commit dash m followed by a short description of what
+you've done, what that'll do is have Git save a new version or a new snapshot
+of your repository in that moment keeping track
+of all of your old versions as well.
+So that's git commit.
+And we'll take a look at that now.
+I'll do git commit dash m for message.
+And the message that I want to include in this case is just added hello.html.
+That's what I did.
+I'll press Return.
+And what you'll notice is that Git provides me some helpful information
+about what it is that I just did.
+It said one file changed at nine insertions because I added a new file
+and that file had nine lines in it.
+And so now Git has kept track of the fact that in this commit,
+in this save I have added this hello.html file that
+has the contents that you just saw a moment ago.
+So that's me making a save to the contents of that file.
+Next command that's often helpful to know and to be familiar with
+is git status.
+Git status is a simple command that effectively just tells you what's
+currently going on in your repository.
+If you forget whether you've made new commits since the last time you checked
+from GitHub, if you forget whether you've made new changes that you
+haven't committed yet, git status is an easy way to just run git status
+and see the current status of what's going on inside of your repository.
+So let's take a look at the code that we've been working on.
+We'll go ahead and run git status on it.
+And what we see is on branch master--
+don't worry about branches too much.
+We'll dive into more depth about that next week.
+But importantly, we'll see that we are based on origin master
+and right now it says we have nothing to commit.
+So git status effectively tells us the current status of the repository,
+tells us what's going on with our repository at any given moment.
+So next up we've made these changes to our repository.
+The next question is, now how do we send those changes back to GitHub?
+GitHub's keeping track of our repository on the internet
+and we've made changes to the repository adding hello.html on our computer
+locally, but that isn't yet reflected on GitHub.
+If we were to check the GitHub page for this repository
+it would still currently be empty.
+So how do we then send those changes to GitHub?
+That's called a push, where we push our code from our local computer
+to the repository that's stored somewhere on the internet.
+And so when we run git push, that causes those changes,
+whatever changes that we've made to our code locally
+to be pushed to the remote server so that GitHub is now able to keep
+track of those changes that we've made.
+So that is git push.
+And I'll go ahead and try and show you that now.
+If I try and run git push it pushes those changes to the GitHub repository.
+And now if I go back to here, this GitHub page for student50/lecturezero,
+which is the repository page on GitHub, and refresh that page
+you'll notice that now there's contents here.
+Now I have an hello.html file that's located inside this repository.
+And if I click on it then you can see the contents of that hello.html file
+that is now stored on GitHub as well.
+So I've now taken my changes that were just on my computer before
+and I'll push them so that they are on the internet as well for people to see.
+So that's git push.
+Next up is sort of the inverse of that.
+Git pull.
+What if someone else has been working on your repository,
+has made changes to it, and pushed those to GitHub?
+And now you want to download the latest version of that repository.
+You want to download the latest changes down onto your computer locally
+to take a look at it.
+How would you go about doing that?
+That's by a different command called git pull.
+When you run git pull, if there are other changes that
+have happened on the remote server, notice that here locally I've
+made one change, but someone else on GitHub for instance
+has pushed some second change that's been made to the code.
+If I run git pull, that causes any of the latest changes that
+have been made on the remote server to be downloaded onto my own computer
+so that I now have a working copy of the entire history of what's
+been going on with my project so far.
+So that's git pull.
+And we'll show you a quick example of that now.
+If I go back into the GitHub interface there is sort of two ways
+to make changes to the code that you see here on GitHub.
+Either I can change that code on my own and my code on my computer,
+or actually GitHub's web interface actually has a button here
+that lets me edit this code.
+So let's say I wanted to add another line that
+says hello, again, for instance, that I wanted to add to this file,
+I can scroll down and go ahead and commit those changes.
+Again, commit is just a fancy way of saying save or take a snapshot.
+And when I commit those changes what I see
+is that the contents of my web page on GitHub show hello, world
+and also hello again.
+But if I were to check my computer I just have hello, world.
+Just the one sentence.
+That change has been made on GitHub.
+It hasn't yet been reflected in my version of the code that's
+stored on my computer.
+So what can I do now?
+I can run git pull to say pull down any of those latest changes from GitHub.
+I press Return.
+And notice that it says hello.html.
+Two changes, one plus and one minus.
+One insertion, one deletion.
+Git's not quite smart enough to know that I actually took a line
+and changed it.
+As far as Git is concerned I removed that old line
+that just said hello, world, and added a new line that
+said hello, world, and hello again.
+So if I check my code now going back here, I see that it's now updated.
+My local version on my computer now says hello, world, and hello again
+because that was the change that I had just pulled down from GitHub.
+And so via pushing and pulling code can you and other people
+that you're working with collaborate together on a repository
+and make sure that you're keeping track of any changes that you make.
+But what can go wrong here?
+What might happen and cause things to not seem as simple as they are?
+Well, what if I decided to make a change here?
+Hello a third time.
+So I make that change and I decide to OK, git add hello.html.
+I want to track that.
+And git commit, add a third line.
+So now I've added that third line to the contents of my hello.html file.
+But what if someone else on the internet who has access to my GitHub repository
+decides to edit it differently and decides to say hello, hello, hello,
+and save those changes by committing them?
+Now the online version says hello, world, hello again, hello, hello,
+hello, but in my local version of the code
+it says hello, world, hello again, hello a third time.
+And if I try now to pull this code from GitHub
+it's not going to be as simple as it was last time of just updating the changes
+because Git doesn't quite know which change I actually want.
+Here I've added a sentence online that's a different sentence.
+So we're going to need some way to reconcile those two things.
+And so that's where we introduce the concept of merge conflicts.
+Git will try whenever it can to automatically take
+any changes that have been made and combine them together automatically
+for you without you needing to worry about what's going on.
+But in some cases, if you and another person
+have both made changes to the same lines of the same files
+you may run into a merge conflict, which is what
+happens when you try and run git pull.
+But what happens is that there's some sort of conflict.
+The pull can't happen.
+And so what you'll see is a message that says automatic merge failed.
+You need to fix the conflicts and then commit the results.
+So what does that look like?
+Well, what will happen is that if you open up the file with the conflict
+you'll see something that looks a little bit like this.
+You'll see a file with a bunch of less than signs
+and then HEAD, some lines and then equals, equals, equals,
+some more lines and then this sort of random long sequence of numbers
+and letters.
+It might seem a little bit arcane at the moment,
+but we'll break down what this actually means.
+So when you look at a file like this, which
+results whenever there is a merge conflict produced by Git,
+there are a couple of things to keep in mind.
+One is that anything between HEAD and all the equal signs are your changes.
+The things that you did on your computer before you tried to do the pull.
+Anything between these equal signs and the greater
+than signs here, these are the remote changes.
+The changes from GitHub that you were trying to pull down that
+were somehow in conflict.
+That these two lines couldn't automatically be merged together.
+And this long sequence of numbers and letters is the conflicting commit.
+Whenever you make a commit in Git, Git represents that using a long hash.
+Just a long sequence of numbers and letters
+so that you can uniquely identify one commit out
+of a series in a history of commits.
+And this long sequence of numbers and letters
+is just the name of that conflicting commit.
+It is that commit hash of the one that caused the conflict.
+So what do you do in a situation like this?
+All you need to do is remove all of the lines you don't want.
+Remove all of those less than, equal than, greater than lines
+and also remove whichever part of the code
+you didn't want leaving only the version that you want to be merged together,
+and then get rid of any that extra white space
+and then you can commit the result.
+So I'll show you what that looks like if we go back over to the computer here.
+Recall again, that locally we had three different sentences.
+And online we had three different sentences,
+but the third sentence differed.
+So now if I try and run a git pull what you'll notice
+is that we see exactly this.
+We tried to automerge hello.html, but there was a conflict.
+There was a merge conflict in hello.html.
+The automatic merge failed.
+We need to fix the conflicts and then commit the results.
+So if I take a look at hello.html, my text editor Adam
+is automatically highlighting things in certain colors for me.
+But what you'll notice is you see this less than, less than head,
+and then this version, which was my version, hello a third time.
+And then this version down here, which is the version from online.
+Git doesn't know which one I want, so I need to pick.
+And I'll just say you know what?
+Let's use the version that I had.
+So I'll go ahead and get rid of all of these extra lines
+so that I'm left with just the version that I
+want, the one that says hello, world, hello again, hello a third time.
+And if I then commit those changes, now Git
+knows because I have told it this is how I
+want you to resolve the merge conflict.
+Now Git is aware of how to go about merging the two different versions
+of that repository together in order to come up
+with one version that is going to work for everyone.
+So that's the process of resolving merge conflicts.
+It can seem a bit complicated at first, but as you start to deal with them
+you'll start to get a sense for where the different changes are
+and how to go about resolving them.
+And it's something you may run into as you go about the process of working
+on your project.
+A couple other useful commands that are useful to know.
+One is git log.
+What git log does is effectively just show you a history
+of all of the commits that you've made.
+If you run git log while you're inside of a Git repository,
+you'll see a list of all the different commits that have been made.
+Notice again that you'll see each commit is marked by a unique commit hash.
+Just a sequence of numbers and letters describing that commit.
+You'll see who made the commit, when that commit was made,
+and also a description based on that message
+that you provide whenever you make a commit of what it is that happened
+in that commit so that you can see the history of what's
+been going on in your repository.
+So that's git log.
+And then one other command that's useful to know is git reset.
+So we talked about before if you've made some changes,
+realize that you messed up and you want to go back
+to the way things were before, you can run one of these commands
+if you do git reset --hard, followed by a commit hash like the numbers
+and letters that we saw before.
+That will reset your whole repository back
+to that version, whichever version was marked by that commit hash.
+And likewise, if you run something like git rest --hard origin/master,
+origin/master is a fancy way of saying the version of the repository that
+was the origin of this repository where I got it from.
+In other words, if I cloned my repository from GitHub then running git
+reset origin master is going to reset the contents to my repository
+back to the version that was previously on GitHub so that then I am
+able to see whatever it was originally.
+So in this case, if I run git reset --hard
+followed by the commit hash of some previous version of the code,
+what that's going to do is reset that code back to that older version,
+and now my repository is back to a previous version
+such that I can correct my mistakes and then continue working appropriately.
+And so we'll show a quick example of that.
+So first of all, commit my changes.
+So just now I fixed the merge conflict and run a quick git status.
+Oh.
+I need to add the files before I commit them.
+So that's a good lesson to be learned.
+The way Git effectively works is that we first
+need to add the files to what's called a staging area or an index.
+Just telling it these are files that I want to track in the next time
+that I make a commit and then you commit after that.
+So if I git add hello.html and then git commit, fix the merge conflicts,
+that will resolve the issue.
+And if you're looking to simplify these two commands into one
+simpler command know that you can also do a command like git commit -am,
+where the a stands for add to both add files to the staging area
+and commit them all together in one command.
+So go ahead and press Return there.
+And now if I run a command like git log, what you'll see
+is a history of all the different commits that I've made now.
+Here was me fixing the merge commits, here was when I updated HTML online,
+here was when I added a third line to the repository.
+So I see the history of all of the different
+commits that I've made to this repository.
+And let's say I wanted to reset back to an older one of these.
+I wanted to reset back to this original one where I first added hello.HTML.
+I can take this commit hash, the commit hash
+of when I first made that change, or even just
+the first couple characters of the commit hash
+is usually sufficient to be able to identify it.
+And I can run a command like git reset --hard followed
+by that commit hash by pasting it in there.
+And now I've reset the head, reset where I am in this repository
+back to that older version.
+And now if I check the contents of hello.html, it just says hello, world.
+Back to that very first version of the HTML
+file that I created way back when I first created the repository.
+Yes, so Git keeps track of all the different snapshots.
+In fact, if you run a command like git rest log,
+just a log of all of the different references
+that Git has kept track of you can see all the different changes
+that are still there.
+So they're accessible, but they're just not present
+in the current version of the repository as you see it just there.
+
+Yeah.
+A question over there.
+AUDIENCE: Once you run the [INAUDIBLE] what version of the file [INAUDIBLE]??
+BRIAN YU: GitHub was untouched.
+So the question was, what happens to the remote repository,
+the repository on GitHub when I reset something locally?
+And the answer is that any changes I make to my computer,
+to my version of the repository on my computer
+never affect what's going on online unless I try to push
+those changes to GitHub for instance.
+So if I really screw things up, mess things up on my computer completely
+GitHub's version is still going to be the way it was before.
+And if I really wanted to I could just download a new copy
+by cloning the old version from GitHub.
+If I check now, even though I reset my version on my computer
+it still has hello, world, hello, again, hello, hello, hello,
+because I have never pushed any new changes to GitHub after that
+to tell it to make any additional changes after this point
+that it knows about.
+So GitHub doesn't know about any of those additional changes just yet.
+Question back there.
+AUDIENCE: Yeah.
+So does Windows or a Mac OS [INAUDIBLE] built into it so [INAUDIBLE]??
+BRIAN YU: Great question.
+The question is, is Git built into Windows and Mac OS,
+or is there something special you have to do?
+In many cases, you will need to install Git.
+When we release project zero you'll find that in the project zero instructions,
+there are instructions for how to get set up with a GitHub account
+and how to install Git onto your computer
+and configure it correctly so that it can talk to GitHub.
+But yes, typically you'll need to install it.
+It's free software that you can install on your machine
+and it will prove helpful as you go about starting
+to work on version control.
+Yeah.
+AUDIENCE: Do merge conflicts only happen if you
+were trying to pull from the repository and it's different,
+or is there any situation where I'd be pushing changes and not
+running to a merge conflict?
+I don't know if that makes sense.
+BRIAN YU: Great question.
+So the question is, is pulling the only time that you
+might run into merge conflicts?
+And the answer is no.
+It's the only one we've seen so far.
+But any time you are trying to take two different versions of the code
+and combine them, there is a possibility that you'll run into a merge conflict.
+And so later on in this course, we'll take a look
+at additional features of Git like branching,
+where you can keep track of multiple different versions of your repository
+at once so that you have your current version of your repository,
+but you also have a different branch on which you're
+working on some new feature and maybe a different branch
+where you're working on some other feature.
+And any time you want to merge two branches together to say,
+OK, this feature is done.
+I want to bring it back into the master branch or the official version
+of the code, so to speak.
+Then there's possibilities for merge conflicts there.
+So pulling is one instance in which conflicts can happen,
+but certainly not the only instance in which those conflicts can happen.
+Yeah.
+One more question.
+AUDIENCE: Let's say I entered in multiple files [INAUDIBLE]
+should I run Git [INAUDIBLE]?
+
+BRIAN YU: Great question.
+So the question is, all right, so far in this example
+we've only ever been dealing with one file, hello.html.
+What happens if I have multiple files that I'm working on?
+As it might happen if I'm working on a larger project,
+how do I deal with that?
+Well, the answer is that you need to add any of the files
+that you want saved in that commit.
+And so you could you git add file one, git add file two, git add file three.
+You can also do git add star, where a star just means add everything.
+And that will add all of the files that you have unsaved.
+And the advantage of doing things file by file
+is if you've edited three files, but one of those files
+is unfinished but the other two are ready to go,
+you can just add those two files and commit those changes.
+You only ever need to commit one after you add multiple files to say,
+I want to save the changes I made to these two files,
+but the changes I made to the third file aren't quite done yet
+and I didn't want to add or commit those.
+And so separating the add and commits step gives you that kind of control
+over your repository to say, these are the files
+that I want to keep track of in the next change that I make to the repository.
+So that was effectively a short introduction to Git
+and we'll dive into more detail about Git
+later on as we progress throughout the course.
+But we'll go ahead and take a short, maybe five minute break now.
+And when we come back, we'll start talking about the HTML code
+that we actually saw before.
+Diving into HTML, what it is, how it works, and also CSS,
+how we might style our web pages to make them
+look a little more aesthetically pleasing.
+So all that when we come back.
+
+All right.
+Welcome back.
+So now that we've taken a look at version control
+and how we might go about versioning our project
+and keeping track of different versions of our project as we go along,
+we'll dive right now into the actual web programming
+aspect of the course starting by just taking a look at HTML, or HyperText
+Markup Language.
+This is a language via which we're going to be laying out the structure of a web
+page such that when a user opens up in their web browser,
+their web browser, whether it's Safari or Chrome or Firefox or some other
+knows how to understand and interpret that HTML and display it as a web page
+to the user.
+So we'll take a look at a simple example.
+In fact, we'll just take a look at hello.html.
+Very similar to what we've just been working on with that Git repository.
+And we'll now break this down and sort of get
+a feel for what's going on in terms of what we see here
+and how this is going to translate when a web browser reads code like this
+and tries to interpret it as a web page.
+So up here on line one, we see this sort of funky angled bracket !DOCTYPE HTML.
+This first line just goes mean something along the lines of HTML
+has come in a number of different versions.
+It's had a bunch of different standards where people specify,
+here's what's included in this version of HTML and this new version of HTML.
+And the latest version of HTML is called HTML5.
+And the way that a web browser knows when
+it gets a web page, which version of HTML it's using
+is by taking a look at that first line.
+So that first line saying doctype HTML is
+our way of telling the web browser that this web page is written using HTML5.
+So now let's take a look at the rest of this web page.
+And what you'll notice throughout this web page
+are a whole bunch of what are called HTML tags.
+Those are these keywords that begin with an angled bracket
+and end with an angled bracket.
+Right here we see the HTML tag.
+And all that tag means is that angled bracket HTML ending angle bracket
+means this is the start of the HTML content of the website.
+And this will go all the way until here on line nine where we see a tag that is
+angled bracket /HTML, where that slash just means this is the end of the tag.
+So what line two and line nine sort of tell
+us here is that this is the start of the HTML content of our web page and line
+nine here is the end of the HTML content of our website.
+And everything in between is the actual contents of that website.
+And if you take a look we've divided that content to the website
+into two parts.
+Up here on line three we've started the head of the website.
+Angled bracket head angled bracket.
+That's the start of the head tag.
+The head of the website is usually used for a metadata, information
+about the page that doesn't really appear
+in the main contents of the page, but is used
+to give the browser important information about how
+to go about displaying that page or other important information about it.
+In this case, you see we have a title tag here
+where the title in between the start of the title tag
+and the end of the title tag we've included text, my web page.
+And so as you might guess what this line four is saying,
+is we're going to have a web page whose title is just my web page!
+And that's going to be the title of the web page.
+And that's information that's all included
+in the header of our HTML page.
+In addition to that, on line six here we see the beginning of the body tag
+and the end body tag is on line eight.
+And in the body of the website very simply we just say, hello, world.
+And that's it.
+So what we've described here in nine lines
+is an HTML5 website that's got two parts.
+It's got a header whose title is my web page.
+That's going to be the title of the page.
+And we have a body that just says hello, world.
+And so now if we actually were to open up a web page like this by saying,
+open hello.html, or just opening it in a web browser like Chrome,
+you'll see that what we get is a web page that just says hello, world.
+And if you notice up there at the top it says that the title of the page
+is my web page.
+So as you might guess, Chrome is reading that HTML code that we just wrote.
+And it's interpreting it trying to figure out what means what.
+And it knows where to put different tags,
+it knows that the title tag is going to go up here in the title part of my web
+page, and it knows that whatever is in the body is
+going to go in the main area, the main body of my web page in general.
+So if I changed the title to something else
+or change the body to something else, it would have reflected here.
+Of course, this is a very simple website, but it shows you the basics.
+How we use HTML tags to define the structure of our page,
+and then using those tags we can create pages
+that are rendered nicely when a web browser sees that HTML
+and tries to do something with it.
+Questions about that so far?
+Yeah.
+AUDIENCE: Is the indentation style or functional?
+BRIAN YU: Great question.
+So the question is, is the indentation that we saw in that code earlier style,
+or is it functional?
+The answer is that it's just style.
+Ultimately Chrome and other web browsers don't really
+care about whether your head tags are indented
+and your title tags are indented further than that.
+But it can often be easy when another human is reading your code,
+or even when you're reading your own code to be able to say,
+OK, here's the head tag and just look straight down here
+is the end of that head tag.
+And so very frequently you'll see a paradigm
+like that will indent anything inside of the header,
+but the header itself will be aligned nicely.
+And oftentimes, you'll see things that when a tag only contains one line
+within it, we'll just put the whole thing on the same line where we have
+title, my web page, and then /title.
+But we could have just as easily if we had one or two indented the my web page
+and put the /title on its own line as well.
+And that would render identically.
+If we go back into Chrome, refresh that page, no changes.
+Chrome doesn't care about that difference in indentation.
+Great question.
+Other questions about this first HTML web page that we've created?
+
+All right.
+So that was sort of the introduction to just a basic HTML page,
+but there's a lot more that we can do with HTML
+by taking advantage of other tags.
+So far we've seen the HTML team tag and the head tag and the body tag.
+And right now all that's able to do for us is render some text.
+And we can type more text and it would appear there as well.
+But let's take a look at how we might render headings for text
+because if we have text, maybe we want a heading to go at the top of our page
+and maybe subheadings to go beneath it.
+And so we'll open up headings.html And what headings.html is going to do
+is show you a couple of other tags.
+So HTML has many, many built in tags, more
+than we're going to talk about today, but we'll just
+introduce some of the common ones so you can get a sense for how these tags work
+and the general feel of them.
+And these are ones that will come up quite frequently as you go
+about writing web programs using HTML.
+And what you see here is in H1 tag located inside the body, where H just
+stands for heading, like a big headline at the top of the page,
+and one is a number that stands for its size.
+So HTML has six built in heading tags inside that understand.
+h1 is the largest, h6 is the smallest, and two, three, four, and five,
+as you might guess fall somewhere in between.
+So this is the largest headline.
+Starts at h1, ends with the /h1.
+Notice this continual pattern of angled bracket name of the tag, like h1,
+and then the /h1 to mean this is the end of the tag.
+This is the end of that head end.
+So if we open up this page now by going to not hello.html, but headings.html,
+what we'll see is this is what gets rendered.
+We have this is the largest headline.
+Again, this was our h1, this was our h2, all the way down
+to h6 at the bottom which is a relatively small headline.
+And one feature of Chrome and most web browsers
+nowadays is that if I actually want to take a look at any web page
+and see what HTML actually made it up, I can Control click on the page
+and go to View Page Source for instance.
+And when I go to View Page Source, what I get
+is Chrome showing me the actual contents of the page that it had just rendered.
+And this can often be helpful once you start
+working on larger web applications trying to understand
+what's actually getting rendered.
+In this case, what we see here is exactly
+the same thing as what we loaded before because Chrome is just
+showing us the HTML contents of the page that it then
+renders to look something like this.
+So it's the browser that takes the HTML, understands the tags and what they do,
+and renders it to look a little bit nicer like that.
+So what are some other common HTML tags that we might want?
+So now we have the ability to include text in our web pages,
+we have the ability to include headings.
+One other thing that we might naturally want to do
+is maybe create a list of different items
+where frequently we'll want to have a bulleted list on our web page
+or a numbered list on our web page or some other type of list.
+And so we'll take a look at possible ways we can do that.
+And we'll see here in lists.html that I have two different examples of lists
+for you or take a look at.
+So the start of our web page is the same.
+We have doctype.html.
+This is the start of the HTML content of our page,
+this is the start of the HTML header.
+Here's our title.
+Then in our body is where things get interesting.
+So here where I said an unordered list, I
+have this tag ul, where ul as you might guess stands for unordered list.
+And the ul element goes from here all the way down to line 12 over here.
+And inside of it I have three li's, where li stands for list item.
+This is an item inside of this unordered list.
+Here's one item, another item, and yet another item.
+And so these are three list items that are inside of the unordered list.
+And as you'll start to notice the HTML tags very frequently
+nest within each other.
+We have an li which is inside of a ul which is inside of the body.
+And this natural way of nesting HTML tags within each other
+is a nice way of being able to add and make
+your website more complex by nesting more and more of these different HTML
+tags together in order to create the end product that you ultimately want.
+And so that is a ul, an unordered list.
+Lower down on the page we also see an ordered list, which as you might guess
+is labeled ol, ol for ordered list.
+And that one is going to be numbered.
+We have the first item, second item, and the third item.
+And now if I were to open that up by opening up list.html, what we see
+is we have an unordered list that just shows up as a sequence of bullet points
+and an ordered list that shows up as a sequence of numbers.
+Note that nowhere in my HTML that I actually say, OK, this is one
+dot first item, or two dots second item, three dot third item.
+The web browser knows to render it as an ordered list
+and it puts the numbers there for me, such
+that if I try and insert another item here I
+don't need to go back and renumber the bullet points.
+The web browser will take care of noticing
+that this is the third list item.
+This is now going to actually be the fourth list item.
+And when I render that page it's going to show
+me here's the first item and the second item, another item, the third item,
+and the fourth item in the list there as well.
+So the web browser is pretty smart about these things.
+It knows the names of these tags and it knows what they mean and what they do.
+And it can use that information in order to make a web page that
+looks the way that we want it to look.
+Questions about any of that so far, or about the tags that we've seen?
+
+So thus far, all the web pages that we've created
+have all just had text on them.
+They've had text maybe just written out like unordered list or ordered list,
+they have had headings on them, they potentially had lists
+whether they're bulleted or numbers.
+But we'd probably like for our web pages to be a little more rich.
+Maybe.
+Then we want to have give them some images,
+some pictures to look at as well.
+And so inside of my source folder where I have all these HTML files,
+I have a file called cat.jpeg, which is just a photo of a cat.
+And maybe I want to take this photo of a cat
+and I want to put that on to my web page.
+How might I go about doing that?
+Let's take a look now at imagezero.html.
+So what we're looking at here is a simple web page.
+It looks a lot like the ones we've already
+seen with one slight difference. so here in the body we see on line seven
+that we have an image tag, but there's something a little bit
+different about the image tag.
+In fact, there's two things that you might notice.
+Thing number one, we see the start of the image tag
+but we don't really see an end to the image tag.
+All the other tags have body and /body, title and /title head and /head,
+but there's no image and then /image at the end of it.
+And the reasoning for that is that not all of the HTML tags
+require a beginning tag and an end tag, a start and an end
+because some things like images, it doesn't really make sense to say,
+OK, start the image and end the image and what goes in the middle.
+You're not going to type text in the middle of the image for instance.
+And so for tags like the image tag you don't need an end tag.
+It's just sort of a self-contained tag that doesn't
+require an end tag to go along with it.
+The second thing that you'll notice about this tag
+is that it's not just the name of the tag.
+The name of the tag is img, for image, but we've also
+added what's called an HTML attribute.
+And this HTML attribute called SRC, or source is providing
+additional information to this tag.
+It's saying this is an image tag that I want to render to the web browser.
+But without any additional information the web browser
+wouldn't know which image to render.
+It wouldn't know whether to render an image of a cat
+or a dog or a jellyfish or something else entirely.
+And so what we have to do in this case is provide that information
+to the web browser.
+We have to tell in our HTML code here's the name of the file
+that we actually want to render on the page.
+In this case, it's cat.jpeg, that same file that I was showing you earlier.
+And if instead, the image that you wanted to display
+was somewhere on the internet, some linked
+to an image that was on Google Images for instance
+you could just paste in a link to an image and that would render on the page
+as well.
+So if we then go and open up imagezero.html inside of a web browser,
+what we'll see is a very big--
+we'll see that cat.
+And why did the image render so big?
+This probably isn't the type of interface
+that I want to present to my users.
+If I want to show my users an image of a cat I don't want it rendering huge.
+And I guess the reason for this just happens
+to be that the cat.jpeg file that I've stored on my computer
+is a very high resolution image.
+It's many pixels wide by many pixels tall.
+And as a result, my web browser without being told any additional information
+about how to deal with something like this is just going to take the image
+and render it at full resolution because it
+hasn't been told to do anything else.
+But fortunately, for us in order to control that and have a little bit
+more control over what's going on when our web page renders and is displayed
+to the user, we can add a couple additional attributes to the image tag.
+So what we see here is the exact same web page.
+We have the image tag and the source attribute,
+but we've added two additional attributes.
+We specified a height attribute that says
+render this image that's 200 pixels tall and a width attribute that says render
+this image that's 300 pixels wide.
+And so now when I open up this same web page
+but change image zero to image one, it's going
+to just render the image as 300 pixels wide by 200 pixels tall because I've
+told it using those HTML attributes that this
+is what I want the dimensions of the image to ultimately be.
+And so we noticed that some of the attributes that we
+use in HTML, like the source attribute, you need that source attribute.
+If you don't provide a source attribute your web browser's not
+going to know what image to add.
+But there are many, many more attributes that are optional.
+Attributes ones that you can include if you want to.
+You can optionally specify the height or the width
+of the image that displays in your HTML page, but you don't need to.
+But you should be careful because your web browser is just
+going to listen to you no matter what it is that you type in.
+If I say, all right, I want the width to be 300, but I want the height to be I
+don't know 700 pixels for instance.
+And then I try refreshing this page, suddenly
+the cat doesn't look quite right anymore because I've
+distorted the image by telling it exactly what dimensions to display it
+as.
+But the web browser will be smart if you give it the opportunity to be.
+So if I just say, height is 700 pixels but leave off the width for example
+and just say render it as a 700 pixel tall cat it will render to 700 pixels
+tall and adjust the width appropriately in order to match.
+So if you are going to specify both the height and width to something,
+make sure the dimensions are what you want
+them to be otherwise oftentimes it's best just left up to the browser
+to make that determination for itself in terms of what makes the most sense.
+So that's images and how we use HTML attributes to adjust
+the behavior of particular HTML tags.
+Questions about that?
+Yes.
+Question over there.
+AUDIENCE: How would you make the image as a proportion [INAUDIBLE]
+web browser [INAUDIBLE]?
+BRIAN YU: Fantastic questions.
+So the question is, how do we take this image and make it sort of proportional?
+Because if I'm here looking at it on a computer with a sort of a wide screen
+then this looks great, but if for instance I
+were to shrink down this page, now most of the cat gets cut off.
+And so HTML, and later we'll see CSS for styling,
+has a number of different ways via which we can control exactly how tall
+or how wide things are and control the size of things.
+One way is by specifically specifying a number of pixels.
+For instance, I might say that I want this cat to be 700 pixels tall,
+but I might alternatively say, all right, you know what?
+I want the width of this cat to be 50%, 50% of the total width of my web page.
+So if I save that and render it, what I see
+now is that I didn't tell my web browser here's
+how many pixels to render this image as, it just
+knows 50% of whatever the width of the web page
+is, that's going to render as half of that.
+And now if I shrink the web page, before the cat didn't change size
+because it was a fixed number of pixels and if I shrink the web page
+it doesn't really care, but now if I shrink the same web page
+you'll notice that the cat shrinks with it.
+As my web browser gets narrower, 50% of that full width of the web browser
+is getting smaller.
+And this is a trick that's often employed.
+Now, if you start to think about how to make your web
+pages responsive to people using mobile phones or tablets
+or devices of different sizes, making sure that your content looks good
+both on a computer but also on smaller devices as well
+is very, very important nowadays as web applications
+become more and more useful on varieties of different platforms.
+And so techniques like that of using a percentage instead
+of a number of pixels to say I want this to only show up as 50%
+can often be a helpful tool to make sure that you have that dynamism, that
+responsiveness in your website to make sure
+that it's able to adapt accordingly.
+Great question, though.
+Other questions?
+
+All right.
+We'll keep going.
+So that was images.
+We'll show you a couple of other things that HTML can do.
+One thing that it's very useful for is rendering tables.
+So we will have tables of data with rows and columns
+and we want to display that data to the user.
+Let's take a look at table.html, which will be an example of that.
+So what we have here is a table that represents US presidents.
+Just the first two.
+But what we'll notice here is that we have a table tag that begins the table.
+And then we have a whole bunch of tags nested within it.
+We have a tr tag, which stands for table row.
+And then within that we have th tags, which stands for table headers.
+So if you think about this just going one layer at a time,
+we start our table.
+And the first thing in our table is going to be a row in that table
+where that row is going to consist of three headers or three columns that are
+being headed by these individual cells.
+We have first name, last name, and years in office.
+And now we end that row with /tr.
+That's the end of that row and now we start another row.
+Here's a table row that says, all right, here is
+going to be the start of a new row of this table.
+We have George and then Washington and then
+the years of George Washington's time in office.
+And if we scroll down a little more we see
+we have another row underneath that.
+Notice that inside of the row all of the individual cells
+are stored in td elements, where td stands for table data.
+This is just the data that is contained within that particular row.
+And so now if I were to open up table.html, what I see
+is something that looks something like this.
+I see my title.
+Notice presidents was here labeled as a h1,
+so it's going to render as a large heading.
+And within that I have individual rows.
+Here's my header row.
+The th ones make it render as sort of bold.
+And I have the names and in the second row inside of that table as well.
+Now, this might not look like a very fancy table.
+It doesn't have borders or a coloring or it
+doesn't look like it could be aesthetically pleasing.
+We'll see later on in tonight's lecture how
+we might go about styling a web page like this in order
+to make it look a little bit nicer and look a little more aesthetically
+pleasing.
+But that's an individual table.
+And if I wanted to, I could add an additional row to this.
+Right here is two rows and I can just continue to add more elements inside
+of this HTML page.
+So I can say one new table row and I'll end that table row.
+And inside of that is going to be table data Thomas Jefferson and 1801 to 1809.
+And so if I refresh that page, we see that the third row in that table
+now appears because I've added to the HTML code.
+And you can continually do this by adding more and more HTML elements
+to the contents of my HTML page.
+One other HTML tag that we'll take a look at just to see how they work
+is form.html.
+So what we're looking at here is an HTML4.
+Oftentimes, when we're working with applications
+we don't just want to display information to the user,
+but we want to collect information from the user in order
+for them to either sign up for our website or log into our web site
+or submit data to us in some other way.
+And so what we see here is a simple example of an HTML form, where
+we have this form tag in the end of the form to say here
+is going to be a place where users can input data.
+On line seven we have an input tag.
+Notice that like the image tag there is no end tag here.
+This is just going to be a place where users can input text
+and we need to tell the web browser what type of information
+the user is going to be inputting.
+In this case, we're saying the type of that information is just
+going to be text.
+And we're specifying a couple of other optional attributes
+that give additional information to this form so that it knows how to behave.
+Placeholder is just full name.
+Placeholder, if you'll recall, and we'll take a look at it in a moment,
+is sort of that same text that appears in a text field
+before you start typing in it just to give
+the user a little bit of an indication as to what's expected of them
+as to what goes there.
+And this name field at the very end just gives a name
+to this input field that says that this input field is
+going to store the name of the person.
+This won't become relevant just yet, but as we'll see later on in this course
+as we start to actually do things with the form, take this information
+and log it to a database or process it in some way,
+being able to reference a particular input field by its name
+can ultimately be very, very helpful.
+And then finally down here after they type in their name,
+let's give them a button to click on.
+That's created just by using a button tag.
+And the name of this button is going to be Submit, and then /button to say, OK,
+that's the end of that button.
+So if we render that form and take a look
+at what that looks like when we open it as HTML
+we see it's going to look something like this.
+So we have a spot for the user to type in their full name.
+Notice that full name is automatically placed there as the placeholder text
+that we put in or HTML, and they can type their name in there.
+And then the Submit button is a button that
+would theoretically submit that form.
+Now, this form doesn't yet do anything because we haven't hooked it up.
+We haven't told the form what to do after someone clicks on the Submit
+button, but we'll see later in this course
+how we can begin to using other programming languages like Python
+and JavaScript begin to take the results of form information
+and do something useful with it.
+But for now all we're doing is designing the front end.
+What the user sees when they visit a particular web page.
+So that was the form.
+Questions about the forms or tables or images
+or any of the other HTML elements or tags that we've seen thus far?
+
+All right.
+One helpful way to think about HTML as we
+think about designing our HTML websites is thinking about them
+like a tree structure.
+If you're unfamiliar with tree structures,
+effectively think of them as a combination of nodes
+where nodes are just points within this tree that are connected to other nodes.
+So in this case, if we look at a simple website like the Hello, World page
+that we created before, if we wanted to represent this as a tree in HTML
+we typically call that tree the document object model.
+It might look something like this.
+We have HTML at the very top.
+Everything in our web page is contained within this HTML tag.
+And within that HTML tag we have the header,
+that head section of the HTML page, and we have the body of the HTML page
+because inside of HTML we have the head here and the body there.
+Inside of the head we have a title because the whole title
+tag is nested within the HTML header.
+And inside of that title is our text, hello.
+And likewise, inside of our body is just this text, hello, world.
+And you can imagine for some of our more complicated pages
+that we saw earlier where we had tables, for instance,
+that we might have a table element inside of our tree
+and which is connected to a whole bunch of tr's for table
+rows each of which itself is connected to a whole bunch of th's for table
+headers, or td's for table data.
+And you can represent this entire HTML page as this big tree.
+And it might not seem very intuitive as to why
+you might want to do that right off the bat,
+but as we'll soon see, especially as we start diving into JavaScript later
+on in the course that by having an understanding of this tree can
+we start to manipulate it, can we start to add things to the tree
+in order to add more to our web page, remove things
+if we want to take things away from the web page
+while the user is interacting with it.
+And as we'll see in just a moment we can use this tree in understanding
+what's contained within what to begin to style our web pages.
+And styling our web pages is going to be the process of taking what so far has
+just been websites that have a white background and black text on it
+and maybe images and other things as well,
+and starting to add some of our own custom styles
+to it in order to make it look a little bit nicer to the user.
+Because a big part of web development these days
+is not just making sure that the web site works
+and that it does what it's expected to do,
+but also that it's visually appealing to the user.
+That it's something that they would want to interact with,
+that it looks nice, that it looks professional.
+And so that is not something we can do with just HTML alone,
+but it's something that's going to come in with an additional tool called CSS,
+or cascading style sheets which is a different language altogether
+and we can use to interact with HTML in order
+to style the HTML in order to change the way the HTML looks according to rules
+that we set in order to add color to our web pages, for example,
+or add spacing in places where we want spacing or add borders to things
+or add a background to things, for instance.
+And so what we'll take a look at now is how
+we might be able to leverage some of the tools of CSS
+in order to design a web page that looks just a little bit nicer than the web
+pages that we've already been working with.
+So let's take a look at stylezero.html.
+And what we'll notice is that this web page is
+very similar to ones we've seen before.
+It's got a body, it's got an h1 as the headline,
+it's also got these p elements where p just stands for paragraph,
+like a paragraph of text.
+But the key difference here is that we've added a new attribute.
+We've added this style attribute here that's associated
+with h1, that headline.
+And that style attribute is equal to something a little bit complicated,
+but let's break it down into parts.
+We have in quotation marks, "color:blue;text-align:center";
+And so what we see here in this style attribute of our heading,
+R2 is CSS properties, where a CSS property is just some specific style
+property that the browser is going to understand and render in a particular
+way.
+And as you might guess what's happening here
+is we're saying that we want to assign the color property of this heading
+to blue and we want to assign the text align
+property of this heading to center.
+And so what that's going to do is instead of just rendering an h1 as we
+normally would as just a black big headline on the left side
+of the screen, we'll render it as a blue headline that's centered on the screen.
+And so if we now open up stylezero.html, and we see a web page
+that looks something like this.
+That big heading is still there at the top of the page,
+but it's a little bit different now.
+We styled it to be blue, we styled it to be centered.
+Whereas before, if we were to just get rid of this style tag
+altogether and say that this is what that looks like without any
+of that additional styling.
+And so leveraging tools like that we can start
+to build up styles for our web page.
+We can start to make things look the way we want it to.
+We can apply a color scheme to our website
+in order to put whatever themed colors we want to put on our site.
+And this can be used in order to add the sort of styling.
+And HTML and CSS have a very rich vocabulary
+for the types of things that can understand.
+Obviously, we can be simple colors.
+We can do the blue color or we can say red to make the headline render as red
+instead, but there is something like 140 different colors
+that HTML and CSS know how to understand and interpret.
+So I could do something like color:dark magenta, for instance.
+And if I refresh that page then the heading is rendered as dark magenta.
+And if that's not enough color sophistication for you,
+the 140 different named colors out there,
+you also have the ability to select exactly which color you might
+want by using that colors hex value.
+And so in HTML and CSS and when we're dealing with color more generally,
+we'll often represent color using a format called RGB, or red, green, blue
+where we specify how much red is in the color, how much green is in the color,
+and how much blue is in the color.
+And using different combinations of red and green and blue,
+where zero means very little red and 255 means a whole lot of red.
+And likewise for green and blue can we represent basically any color
+that we want to.
+And so if we type in HTML color picker, for instance,
+and we can see over here that this color, this shade of blue
+is 66 amount of red.
+So a moderate amount of red and a little more green, 134 green and 244 blue.
+So a whole lot of blue.
+And that is this particular color.
+And so if we wanted to make our headings some different color, for instance,
+maybe we want it green and we want it to be a darker green like this color,
+for instance, that's this color.
+That's 12 red, 142 green, and five blue.
+And that color is represented by this up here.
+This is called a hex code.
+If you're familiar with hexadecimal or base 16,
+it's effectively these three numbers 12, 142, and five represented in base 16.
+No need to actually understand where that number comes from,
+but effectively know that the first two of these numbers and letters
+represent the amount of red, the second to represent the amount of green,
+and the last represent the amount of blue.
+And if I take that now 0c8e05, and in my HTML code rather than dark magenta,
+I say #0c8e05, for instance, that same color hex
+code that I saw before and then refresh my page,
+now it's going to render using that exact same green.
+So by using hex codes and understanding RGB values,
+we can have a lot more control over the colors
+that our web page uses by specifying exactly which
+color that we want to display when that page ultimately gets rendered.
+So that's the basic introduction to how we
+might use the style attribute to begin to add some styling to our web pages
+and make them look just a little bit nicer.
+Questions about that so far, CSS or colors or anything we've looked at?
+
+As we can imagine, if we start to-- and I'll
+change this back to blue just for good measure.
+If we start to add a lot of styling to our HTML web pages,
+this is going to start to get cluttered pretty fast.
+I can start to add additional styling here.
+If I want my paragraph here to be purple and I want this paragraph over here
+to be red, for instance.
+And this will certainly work.
+I can style things in different colors and that's going to work just fine,
+but I've mixed my CSS code of describing what color
+and how I want things styled with the actual contents of my page,
+of the actual content that I want to be displayed
+when the user goes to the page.
+And oftentimes, that can be seen as just a little bit messy.
+We might look for a cleaner and more elegant way of styling our page.
+And CSS offers a number of different ways via which we can do that.
+So one way is seen here in styleone.html.
+So notice in styleone.html, which ultimately
+when we open it is going to render exactly the same way.
+Big blue headline and then two paragraphs of black text.
+We've done something a little bit different here.
+What we've done is the body of the web page
+is the same as it was before without any style tag attached to it.
+The h1 no longer has a style attribute.
+It just says h1m welcome to my web page.
+What we've added is we've added an extra section to the header of the web page.
+We've added the style element to the header
+to say here is some style information for the web page should
+know that should be included in the entire web page, the rules
+to follow when deciding how to style and how different parts of the web page
+should appear.
+And what we see here on line six is that inside the styling of the web page
+we have h1, meaning here is how you should style any h1 that you see.
+We say h1, the color is going to be blue and the text align property
+is going to be centered.
+And that's why ultimately that page looks exactly the same
+because effectively the browser is doing the same things.
+We've just moved the CSS styling away from the body of the HTML content
+to the web page.
+And this is a paradigm you'll start to see
+a lot as we begin to approach web development from a number
+of different angles that whenever we're intermingling
+a lot of different things, oftentimes it can
+be helpful to take one part of the web page
+and separate it out into a different place such
+that it's more logical or more easy to understand or more readable
+or ultimately more elegant.
+And this is one example of that of taking the h1 out of the h1
+from the body and just describing it in the header of the web
+page in terms of how the entire page should be styled.
+And one other note about this is that when we put the h1 in the style tag
+in the header, it's going to apply to every h1
+that it sees throughout the page.
+So if I add another header, adding here is a second headline,
+and that's also an h1 because up here in our style tag
+we've told every h1 to render as blue colored
+and centered in terms of its alignment of the text.
+When we refresh this page the second headline
+is also going to show up as centered and blue as well.
+Whereas before in that first example, if we were to add an h1
+and we wanted it to be styled the same way, we would have needed to go ahead,
+and h1 style equals color blue text align center and repeat that same thing
+again for the second one.
+And generally speaking, whenever you find yourself repeating the same code,
+or even copy pasting the same styling code again,
+in order to make it to apply to something else, generally speaking you
+should look for a better designed or a more elegant
+way of doing the same thing because ultimately this repetitiveness gets
+difficult to maintain.
+If I want to change the headlines from blue to red, for instance,
+I now need to change the headline in two different places in my web page.
+Whereas, in styleone.html, where I have all the styling
+contained inside of just this style element,
+inside of the header of my web page.
+If I wanted to change both of my headings to red instead of blue
+I just need to change it in one place, changing color from color blue
+to color red.
+And now both of the headings change in their color
+because that Heading Style is applied to the entire document as the whole.
+Questions about that?
+
+OK.
+But we can in fact get even better at how
+we go about trying to separate out the CSS
+because natural questions that might come up now are number one,
+we still have this styling code inside of the HTML file,
+when it sort of feels like something separate.
+The way that we style our website is sort of
+fundamentally different from the actual content
+of the text that goes on our website and the structure of our web page
+in general.
+But another issue that might come up is, what
+if I start to build larger web applications that don't just
+have one HTML file, that have two, three, four, or more HTML files
+that all want to have red headlines that are all centered.
+Of course, I could take the style tag and I
+could copy paste it across all of my different HTML files,
+but again, that brings up the same problems that we saw before.
+The problem of whenever you find yourself copy and pasting
+code and repeating code we run the risk of making it more difficult to maintain
+and ultimately making it less elegant.
+If we wanted to change the color down the line
+it becomes a whole lot harder because we have
+to change it in many different places.
+So what can we do about that?
+Well, we can take that CSS code and just separate it into a different file
+altogether.
+So what I'll show you now is styletwo.html.
+Styletwo.html does the exact same thing as styleone.html.
+And all the source code will be made available to you afterwards as well.
+Styletwo.html shows you a big blue centered headline,
+but how is it doing that?
+Well, the body is still the same and we no longer have a style tag in the head,
+but what we do have is this line here, line five.
+Link rail equals style sheet href=styles.css.
+So what's going on here?
+This link tag is effectively telling us we
+want to link in some other file that's going to provide us information to help
+us know how to render this HTML page.
+And what kind of information are we trying to render?
+Well, it's going to be a style sheet.
+Information about how to style our web page.
+And which file are we going to include?
+Which is the file that we want to link?
+Well, it's styles.css.
+And so now if we take a look at styles.css,
+what's going on in there to allow it to render the CSS the way
+that we want it to?
+Let's open up styles.css.
+It's exactly the same thing as the contents
+that we saw in the style tag of our HTML header before.
+It's just h1, color is blue, text align is center.
+And that's what allows us to get this.
+If we add additional properties, maybe I want my paragraphs
+to all be red, for instance, and I save that, now if I refresh of the page
+the paragraphs are red.
+The HTML file didn't change at all.
+Styletwo.html stayed the same.
+Yet, when I refreshed it the styles changed because this linked file,
+this linked CSS file that is defining the style for my styletwo.html file
+has been updated to say, now I want all of the paragraphs
+to show up with red coloring instead of the original black.
+And so we saw three different ways via which we can link CSS
+into the contents of our HTML code.
+One, just by including that style attribute directly in the HTML.
+The second way, factoring it out into the header of the HTML
+page so that it applies to the entire page.
+And then finally, what might be one of the most common paradigms
+you'll use, especially if you start building larger web applications is
+this method of saying, take the CSS, separate out into a different file such
+that even if I have many different HTML files
+they can all reference the same CSS file so that they all
+get styled the way that I want the page to be styled.
+So those are the basics of how we might go about using CSS.
+Now let's take a look at a couple of the common CSS properties
+that we might use.
+So far we've seen color to give a particular element of color in HTML,
+and we've seen text align to say I want to center this text instead of left
+justifying it.
+And we can also use CSS to change the size of different elements as well.
+So let's take a look at size.html.
+And for good measure I've just included the CSS in the header
+like we saw in the second example before.
+Though in practice in a larger application
+you might want to move this information into a different file.
+But what you see here is inside the body I have a div.
+And a div just basically means a division of my code.
+Some section of my code that doesn't really have any real formal meaning.
+It's just a section of my code that I want to do something with,
+maybe style in a particular way.
+And here's a style I've applied to it.
+Background color is going to be teal, width is going to be 100 pixels,
+height is going to be 400 pixels.
+So if I now go to size.html, this is how it gets rendered.
+We have a vertical just block of HTML content that says hello, world.
+But in particular its background color is teal, it's got a particular width
+and it's got a particular height as defined
+by what I included inside of my style tag just a moment to go.
+And so using these width and height tags we
+can start to really define exactly what our website looks like.
+If we change the width to 500 pixels instead of 100
+and refresh the page there, we see that now it's a fair bit wider.
+And so we can control exactly how the web page shows up
+just by making these small modifications to it.
+But now what if we wanted to add a little more to this website
+in terms of its design, in terms of the spacing of this page,
+in terms of thinking about what it's going to look like?
+You notice that right now this hello, world block
+is very close to the upper left hand corner of the screen.
+Maybe we would want to move it around a little bit more.
+So that's where we can start to introduce the notion of a margin
+around the edge of a particular HTML element.
+So for instance, if I go in here and set the margin of the div
+to be 30 pixels, for instance, and now refresh that page,
+now we see that hello, world has a margin around it.
+It's got this sort of 30 pixel invisible border that's surrounding it.
+And it helps to space that out from different elements.
+And so controlling margin can often be helpful
+when you're trying to lay out a web page with a bunch of different elements
+and you want to control how far apart different elements are from each other.
+The margin is very helpful there.
+Another thing you might notice is that hello, world right now
+is very much just directly at the edge of this teal box, which
+looks a little bit suboptimal.
+Maybe I would want to change that a little more.
+And for that I can add in another CSS property called padding.
+So I can say, all right, let's add a padding of maybe 20 pixels.
+And after I refresh that, now you'll notice
+that hello, world is internally padded by sort
+of an invisible border of 20 pixels.
+And so margin and padding are both used in order to control spacing.
+But the key difference is that the margin of an element
+is the space around this outside of the border of the element.
+So this is my div, this teal box.
+The margin is what's outside of it.
+I've got 30 pixels of space along that side
+and the padding is between the content of the element and that elements
+border.
+So this right here is 20 pixels worth of padding for the hello, world
+that's located inside of this div.
+And so using margin and padding, especially on larger web applications
+you can start to really control the look and feel of the website
+in order to make it display exactly the way that you would want it to.
+All right.
+Thus far we've also only been interacting with our HTML page
+in the sense of having text that is all of the same font.
+It's sort have been the same default font
+that HTML tends to use whenever a web browser is displaying HTML content.
+And maybe we'd like to have a little more control over that.
+So let's open up font.html, and take a look at what's going on there.
+So again, we have a body inside of which is a div that says hello, world.
+And inside of the style tag up here we've
+added some special styling to that particular div.
+In particular, we've added three things.
+We've added a font family that effectively just says
+this is the font that I want this div to render in.
+And notice that I haven't just said give it one font.
+I said Arial, but I said Arial, sans serif.
+Reason for this is when we start to think
+about making sure that our website looks right in matter what browser it's
+loaded on.
+So maybe you were wanting to even include some font on your web page
+that the user's computer doesn't have, or that the user's web browser just
+doesn't understand.
+And so if you include multiple thongs as the font family
+in the styling of our HTML, then what's ultimately going to happen there
+is-- sorry.
+There's an extra tag there.
+What's ultimately going to happen is that the web browser will first
+try and match the first font that I provide.
+It will try and use the font Arial if at all possible.
+But if it doesn't have the font Arial, if the web browser doesn't
+know what Arial is or can't find that font,
+it's just going to default to any sans serif font.
+And so oftentimes if you want to use fancier fonts on a web page
+it can be a good idea to include the font that you want,
+but after that some additional more common fonts
+that might be more common in other browsers
+on older browsers in particular that way you
+can guarantee, or at least know with high probability
+that when a user looks at your page they're
+seeing what it is that you actually want them to be looking at.
+In addition to the font family, we've additionally
+specified the font size for how big we want the font to show up as.
+In this case, 28 pixels tall.
+And finally, a font weight.
+You want the fun to be bold, for instance.
+So now if we open up font.html, we see that what we get
+is slightly different text rendering that what we saw before.
+We see hello, world, but it's no longer in that same font
+that it was previously.
+It's now 28 point font in size, it's now in a particular font,
+it's now bold because we were able to control
+the font that was present there.
+Couple other CSS things that we'll just take a look out before we move on.
+We'll take a look at border.html So again, we have inside of the body
+a div that says hello, world.
+Just [INAUDIBLE] saying hello, world in some rectangular box.
+But in the past that rectangular box has sort of been invisible.
+We've seen the words hello, world, but there hasn't been
+like in a physical box drawn around it.
+But now there can be.
+Up in the style tag we're going to specify that we want inside of the div
+for there to be a border and that border to be a three pixel, solid blue line.
+And so by specifying border three, pixel, solid blue
+we can open up border.html and now we see
+hello, world inside of this rectangular box that is a three pixel blue line.
+And we can change this, can customize it however you like.
+It can be a five pixel, dotted red line, for instance.
+And now it's going to look something like that.
+So we have full control over what the border looks like.
+And again, there are many, many CSS properties.
+Far more than we're going to be able to look at in just tonight's lecture,
+but I'm giving you a taste of them, just a teaser
+of what CSS properties are out there so that as you start
+designing your own web applications you can
+think about what do you want the web page to look
+like, you can get a feel for what CSS is capable of.
+And as a result, you can start to design pages that look
+the way that you want them to look.
+So that's borders.
+And now let's try and use some of the CSS that we've learned in order
+to improve the style of one of the HTML pages that we've already looked at.
+So let's take a look at table.html.
+And recall that table.html was just a simple web page that
+listed presidents of the United States.
+We have Washington, Adams, Jefferson.
+And right now this table doesn't look particularly fancy or particularly
+great, but we can use CSS now to begin to add styling to it,
+to begin to control the way this looks to make it look the way we want it to.
+Maybe, for instance, we want a border around this table.
+So up in the head I can add a style tag and say, all right,
+around the table lets add a border and let's make it two pixels solid black.
+
+And now around our whole table we just have
+this box, a two pixel solid black line that's
+surrounding the entirety of this table.
+So that's good.
+That's a good start, but it's not great.
+I also would probably want for there to be borders
+around individual cells for this table.
+Lines that are dividing up the rows and the columns.
+And so let's do that now.
+So now I would want to apply styling to the table headers.
+Let's apply a border of maybe one pixel, solid black this time
+and also around the table data.
+One pixel, solid black.
+Recall that the headers were these things at the top the first name,
+last name, years in office.
+Whereas the data, the td were the individual cells
+that were composed within that table.
+And by specifying this now and I refresh of the page,
+now the individual cells also have a border around them.
+We see a little box around each one of these individual cells.
+And one thing you may have noticed is that the styling for the table header
+is the same as the styling for the table data.
+They're both border, one pixel solid block.
+And it felt a little bit repetitive for me to have
+to say the same thing two times.
+So what I can do instead is just say th,td, to mean take this styling,
+apply it to both table headers and table data and then I don't need this
+additional information for the CSS.
+I just say the table is going to have a two pixel, solid block border.
+The table header and the table data will each have a one pixel solid back
+border.
+And if I refresh that the same exact layout results.
+I don't see any changes in the styling because this is fundamentally
+the same meaning as before.
+We've just managed to eliminate some of that redundancy.
+What else might we want to do here?
+Well, right now one thing that you may notice
+is that the lines are repeated twice because we
+have a box around each one of our individual cells
+we see two lines between each individual cell instead of one.
+And so CSS found a way to get around this just an additional property
+that you wouldn't know about unless you looked it up or had used it previously.
+But [INAUDIBLE] additional CSS property called border collapse.
+And if I had border collapse collapse to this styling of this HTML page
+and then refresh it, now we see that those double borders go away.
+We just have just the borders we want.
+And if we didn't know that border collapse exist as a CSS tag
+it would be very easy to look up.
+You could just Google CSS property for removing double borders in a table.
+And you'll likely find someone online who has said,
+use border collapse:collapse and you can then use those CSS properties
+in your own web design as well.
+Now we might want to add some color to this as well.
+You might want the headings of our table to be in a slightly different color.
+So I might say for the table headers, let's
+say we want the background color to be light gray, for instance.
+And we refresh that and now the background for our table headers
+is light gray.
+And maybe you want to add some spacing.
+Recall that there are two ways that we've
+added spacing thus far in this course where
+margins are around the outside of the box
+and paddings on the inside of the box.
+Right now I get the feeling that these cells are a little bit
+cramped, that there's not a whole lot of space inside those boxes.
+So maybe I want to add more space there.
+So maybe for each of my table header cells and table data cells,
+I want to say padding five pixels, just to add five pixels of padding
+on the inside of my individual cells.
+And now it looks something like this.
+Looks a little bit cleaner, a little more room for the cells
+to breathe because I've added some padding in there
+just by adding these additional CSS properties.
+I can additionally add changes to the size of this.
+Maybe I want the table to be wider.
+I can say make the with 500 pixels, for instance, and now it's 500 pixels wide.
+But as someone mentioned earlier before, this
+might not be great because now if I shrink down this page
+now I've sort of lost information.
+I can scroll over to the other side, but the table doesn't respond with me.
+So I can instead say something like, what width?
+Let's make it 50%.
+So the width of the table takes up 50% of the view
+of the entire width of the window.
+And now as I shrink it down or make it larger
+you'll notice that my web browser knows automatically
+we need to add new lines to the table headers
+in order to make room for all the data.
+The web browser takes care of all of that.
+I just need to tell it, here's how I want the data to render,
+here are the specific style properties that I want to add to the HTML page.
+And the result is this.
+And finally, one thing I might want to do
+is say, for all the table data let's align it centered.
+And what we see now is we have a table that
+looks a whole lot nicer than the table we had just a couple of moments ago
+when we didn't have any of the CSS at all
+and it was just all the tech sort of on one side without any borders
+or centering or styling added to that.
+So using just a couple lines of CSS, we can
+start to take the contents of our pages and make
+them a whole lot more responsive.
+A couple final points to take a look at.
+Any questions about this so far before we move on though?
+Yeah.
+AUDIENCE: [INAUDIBLE]
+BRIAN YU: Yep.
+AUDIENCE: [INAUDIBLE]
+BRIAN YU: Great question.
+So the question is, there are so many properties out there.
+I've shown you a whole bunch today, but there
+are far more that I haven't even managed to touch on
+just because we don't have enough time.
+How do you know which one to use to make a certain thing happen?
+Oftentimes, the best way to do this is to look for documentation online.
+If you look up CSS property documentation
+you'll often find lists that just show you all of the different CSS properties
+that you can apply to style a particular element on the page.
+And you can use those.
+Or likewise, if you're looking for something very specific,
+you want to know how do you get something to happen?
+Maybe I didn't know about collapsing those borders before,
+I can just perform a Google search and look for CSS table,
+combine borders of cells.
+I don't quite know what I'm looking for, but I
+know approximately what I'm asking for.
+And if I look around carefully enough I'll notice that in the very first
+result it tells me I can use that border collapse:collapse property in order
+to make that happen.
+So even if I didn't know how to do that particular thing
+or didn't know how to do some other particular styling,
+this is all readily available information
+that you can look up because others have likely walked that trail before,
+tried to solve the same problems and are likely have a way to use CSS in order
+to make the styling look the way that you want it to ultimately look.
+So great question.
+OK.
+One more example just to quickly show you.
+What we have here are divs and spans.
+So we've seen divs before in a little bit of detail, where the div is just
+a division of my web page.
+That's just going to be some section of the web page, some vertical section
+of my web page.
+And a span as we see here, is really just the section of my web page
+that might be in the middle of some text.
+They don't really have the same kind of meaning the way that an image
+tag is an image and a list tag creates a list and a table tag creates a table.
+The divs and span tags really don't do anything at all,
+but they allow us to label different parts of our page.
+I can say div and then give this an id, where an id is just
+an attribute that uniquely identifies a section of my web page via a name
+that I give it.
+So I can say div id equals top, where top is just
+a name that I picked to say, you know what, this is going
+to be the top section of my web page.
+And I'm going to put it in a div just so that I can name it,
+so that I can name it top to mean this is the top of my web page.
+And likewise here, div equals middle.
+I picked the name middle as the name for this section of the web page.
+And then div id bottom just means I have a section here
+and I'm naming it bottom.
+And I can give it a name by using this id attribute.
+Then these spans here.
+Why am I using those?
+Well, I have this additional attribute called class.
+Class is an attribute that lets me give names to elements as well,
+but it lets me give names to a certain type of element.
+So with id's.
+When I have an id on an HTML element that id needs to be unique.
+There can only be one HTML element in my web page that has an id of top,
+only one that has an id of middle, and only one that has an id of bottom.
+But I can give many things, as many as I want the same class.
+And so here I'm saying, I'm going to call this class name.
+And that way if I want to I can refer to all
+of the different spans who have classes name and style them
+in a particular way.
+And you'll see what I mean by this in just a moment if it's confusing.
+But right now we have three divs.
+This is the top of my web page, this is the middle, this is the bottom.
+Where top, middle, and bottom are inside of these spans
+who have a class value of name.
+So what can we do with that?
+Why are we labeling things with top, middle, bottom name?
+Well, if we take a look at the styling up here,
+this is the contents of our style tag.
+We have this pound sign.
+And the pound sign in CSS is short for id.
+What this is here saying is get me the thing whose id is top
+and style it in a particular way.
+In this case, style it with a font size of 36 points.
+Here, take the thing that has id of middle and style
+it with a font size of 24 points.
+And likewise, take the thing that has id bottom and style
+it with a font size of 12 points.
+And before I wouldn't have had a way to distinguish the styling between three
+different divs, because if I had said div style that is 24 point text
+it would have applied to all three of my divs,
+but if I only want it to apply to one of them an easy way to do that
+is to uniquely identify it.
+This is the top div and then say, OK, get the thing whose id is top,
+here's how I want you to style that thing.
+Likewise down here, if the pound sign means id the dot sign in CSS
+means class.
+So dot name means take anything whose class is name and style
+it in this particular way.
+In this case, make the font weight bold.
+So now if I open up divspend.html, this is the contents that I see.
+I had three divs and you can sort of see them here
+even though they're not laid out.
+This was my top, this was my middle, this was my bottom.
+And because I said get the thing with id top
+and make it the biggest in font size, make the middle one somewhere
+in between, and the bottom of the web page
+the smallest font size at just 12 points,
+then they were able to render using the correct fonts
+even though that they're all div tags.
+And these names, top, middle, and bottom,
+they're all bolded because they were inside
+of spans that had a class of name.
+And I said take all of the things that have a class of name and style
+them with a font weight of bold.
+Take a look at that one more time in case
+it was confusing now that you've seen what this web page actually looks like.
+Inside the body we have these three divs.
+And these id's never show up in the contents of the HTML.
+These names are only present inside the HTML code and not
+when it gets rendered in the browser.
+But I'm giving the divs these names such that later on in my style
+tags I can go in and style them however I want them to,
+by giving them a particular font size, for example, in order
+to result in them rendering the way that I want them to be rendered.
+And likewise, the same for when we have individual names.
+So that's a brief introduction to CSS.
+Next week we'll dive in even further into HTML and CSS.
+But any questions about the CSS that we've
+seen so far in terms of how to go about styling our web pages?
+Yes.
+AUDIENCE: [INAUDIBLE] question.
+A number of the things that you did in the HTML code
+you could do in a Wysiwyg editor where you
+can see what you're doing more readily.
+And then Microsoft Word generates HTML code for you, right?
+BRIAN YU: Great question.
+AUDIENCE: Under what circumstances do you want-- in practice, how are people
+really generating their HTML code?
+And under what circumstances do you want to be down in the weeds
+writing in HTML?
+BRIAN YU: Fantastic question.
+So the question was, nowadays there are all these Wysiwyg editors where
+I can just click a bold button and make text bold or click a color box
+and change the color to whatever I want without needing to know hex values
+and class names and id's and all that, so why
+would I ever want to actually use this stuff, or in what situations would
+this actually come up?
+And the answer is that oftentimes a lot of the basics
+will already be done for you.
+Next week we'll start to dive into a CSS framework called bootstrap
+where a lot of the CSS to make web sites look nice is already written for you
+and you can just use it and make your website look a little bit better.
+But you'll want to use HTML and CSS when it's
+helpful for making very specific adjustments to your web page
+in order to make them look a particular way.
+And also, once we start dealing with dynamic web pages.
+So far all of the web pages we've created
+just show whatever content I want them to show.
+I type in the text that I want to appear on the page and I open up the page
+and it shows that text, but most modern websites aren't like that.
+I open up Facebook or Twitter and it's not like some Facebook or Twitter
+engineer has written all of the posts and tweets I'm going to see in an HTML
+page and shows that to me.
+It's that some server somewhere is figuring out what tweets
+and what Facebook post to show me.
+It's generating HTML and CSS and it's displaying that information to me.
+And that process of generating custom, dynamic HTML
+that gets displayed to the user based on different things
+is something we'll explore later in the course.
+But it's a situation in which we'll really
+need to start to leverage some of the tools in HTML and CSS
+in order to control when we're dynamically creating content.
+How does that content look?
+And those are situations in which we might
+want to have a little more formal control over the CSS and the HTML
+that we use inside of the page.
+But great question.
+Other things?
+Yeah.
+AUDIENCE: I just want to know the difference between id and class.
+For example, can I use the id attribute with span tag?
+BRIAN YU: Great question.
+So the question is, when you use id in class
+can you use the id with a span tag instead of a div?
+Yes, absolutely.
+You can use id's in class attributes on any HTML element.
+So I could have put a class on the div.
+I could have put an id on the span.
+id and class are just two different ways of identifying HTML elements in a style
+sheet, for instance, or using JavaScript as we'll soon see later.
+The only difference is that an id must be unique.
+So there can only be one HTML element called top, only one called middle,
+and only one called bottom, but there can be as many things
+as I want that have a class of a name, for example.
+And so generally speaking, if you want to style one thing
+in just one part of the web page you use an id,
+but if you want to style a bunch of different things you'll use a class.
+So if we think back to Twitter, for example, maybe
+your profile picture that shows up in the upper right hand
+corner of the screen, maybe there's an id
+attached to that that's like profile picture because I only have one
+and I want to style it a particular way.
+But for tweets that are showing up in my tweet feed on Twitter,
+those might have a class because there are a whole bunch.
+Dozens and dozens of different tweets that are all one style
+basically the same way.
+And so by giving them a class and say, you
+know what, style anything that has a class of tweet using these rules,
+then anything that is a tweet will be styled in that same manner.
+AUDIENCE: So the id and class actually cannot be used in the same,
+for example, div [INAUDIBLE]?
+BRIAN YU: The question is, can id's and classes be used in the same element?
+Yes, they absolutely can be.
+If I wanted to, I could put class equals name up in this top div, for instance.
+And what that would do is because it has a class of name,
+when I refresh this, this whole top div is now bold
+because if we just follow the rules that I gave it, I told my website,
+anything that has a class of name make its font weight bold.
+And then down here I said this div has a class of name,
+so the entire thing is going to render as bold.
+So you can give anything the class of name that you want.
+Not just the spans, although in this example, we only gave it to the spans.
+Great question though.
+AUDIENCE: Question.
+BRIAN YU: Yes.
+Question?
+AUDIENCE: What happens if there are conflicting
+sizes of same element [INAUDIBLE]?
+
+BRIAN YU: Great question.
+Question is, what happens if there are conflicts, in terms of what happens?
+And ultimately, we have to resolve those conflicts somehow
+by picking one or the other.
+And generally speaking, CSS will default to picking the more specific thing.
+So if I said I want the top to render with a color of red
+and I want the name to render with a color of blue, for instance,
+technically because the top is supposed to render as red
+this whole text would theoretically render as red.
+But because I said name renders as blue, then when I refresh this,
+even though top is still inside of that text that should all be red
+because the name is more local to it, because it's part of that span that's
+deeper within the tree that [INAUDIBLE] that we saw before than the div is then
+top is going to show up as blue instead of red.
+Great questions.
+All right.
+So we've seen a little bit of HTML and CSS,
+but thus far our web sites have only ever existed sort of locally
+on our own computers.
+I've been opening up these web pages in Chrome
+just by going to a particular file on my computer.
+And you can certainly do that on your own computer
+as well just by opening up HTML files and seeing
+how a web browser renders them.
+But ultimately, that's not very useful if I want to take my web page
+and deploy it to the internet, for instance, for anyone
+to be able to look at.
+So how may I go about doing that?
+To use that there are a number of different ways
+to deploy web pages to the internet, but one common way, or one way
+that we can use in this class using only the stuff we know so far
+is something called GitHub Pages.
+And GitHub Pages is a feature of GitHub which effectively
+lets you take a GitHub repository and deploy it to the internet
+so that people online can look at the HTML contents of that web page.
+And so let's try an example of that right now.
+If I go back to this GitHub repository that we
+saw way back at the beginning of lecture this is the lecture zero repository
+that inside of it has a hello.html page, that's got hello, world, hello, again,
+hello, hello, hello.
+I would like to deploy that to the internet.
+And the easiest way to do this from GitHub
+is using GitHub Pages by doing the following.
+On the right hand side I'll go to Settings,
+I'll scroll down to GitHub Pages.
+GitHub Pages is designed to host your personal organization or project
+pages from a GitHub repository.
+And I'm going to tell GitHub Pages, you know what, deploy
+to the internet from my master branch.
+The master branch is just the default branch
+that we've used on our GitHub repository.
+We haven't yet gone into creating multiple branches,
+but we'll get to that soon.
+But I'll go ahead and click Save here.
+And what that's going to do is enable GitHub Pages
+on this particular repository and deploy this code to the internet
+so that anyone online could theoretically
+go and see the hello.html file that I created before.
+So if I scroll down to GitHub Pages, it says your site is now
+published at this link.
+So if I go to this link and go to this link, /hello.html, it's student 50,
+my GitHub username. github.io slash the name of the repository, in this case,
+lecture zero /hello.html.
+It can sometimes take some time, but this time it's already done.
+What you see now is a URL that you can go to right now if you'd like.
+You can go to student50.github.io/ lecturezero/hello.html,
+and what you will see is a web page with the title of my web page and you'll see
+the contents of hello, world, hello, again, hello, hello, hello.
+And that is now deployed to the internet.
+We've deployed our first website to the internet all just using GitHub Pages.
+And the beauty of this is now if ever we make changes
+to this repository to the way that it works
+or update the code by making pushes to it,
+we will automatically update GitHub Pages.
+It will reflect the latest version of those changes.
+So we can add CSS to these web pages, we can add new content to the HTML,
+we can add different HTML files, and it will all deploy to a URL
+that anyone on the internet can then visit.
+And so that's GitHub Pages.
+And that's something that we'll begin to explore in project zero.
+Project zero, which will be released later today
+is going to be an opportunity for you to start using the stuff
+that we've talked about today.
+HTML and CSS and Git in order to create a web page of your own
+on a topic of your choosing and then deploy that to the internet for anyone
+to see ultimately using GitHub Pages by combining all of these tools.
+Questions about GitHub Pages or HTML or CSS or things we've seen?
+AUDIENCE: Does GitHub Pages render the CSS and JavaScript, for example,
+if you go visit the HTML page?
+BRIAN YU: Great question.
+So the question is, will GitHub Pages render a CSS and JavaScript
+once we get there?
+Yes, GitHub Pages will allow us to do CSS and JavaScript,
+though it's not going to do everything for us.
+We'll soon find ourselves within a couple
+of weeks finding that there are things we want to do with our websites
+that GitHub Pages just isn't quite powerful enough to do.
+And then we'll want to transition using other tools.
+And that's what we'll stuck getting into Flask and other web development
+services that will allow us to build more dynamic, more
+interactive websites that are a little more powerful than just web pages that
+display the contents of what we've already shown.
+But next week we'll dive a little more into Git and HTML
+and CSS doing some more advanced things with figuring out
+how to dynamically generate styling for our web sites
+and going into some of the more advanced features of HTML5.
+But for now, that's it for web programming with Python and JavaScript.
+Thank you all so much and we'll stick around a bit for questions.
