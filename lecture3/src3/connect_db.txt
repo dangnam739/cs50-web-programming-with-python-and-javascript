@@ -1,0 +1,3 @@
+export DATABASE_URL="postgresql://postgres:123456@127.0.0.1:5432/lecture3"
+echo $DATABASE_URL
+--> python <>.py
